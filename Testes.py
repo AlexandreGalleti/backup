@@ -1,6 +1,8 @@
    
 from tkinter import *
 from tkinter import filedialog 
+import os
+import shutil
 
 #configuração da janela
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -20,30 +22,27 @@ label_file_explorer = Label(window,  text = "selecione o banco para o Backup", w
 global data
    
 def browseFiles(): 
+    destino = r'C:\Users\A.Galleti\Desktop\snoop'
     filename = filedialog.askopenfilename(initialdir = "/",    
         title = "Selecione um arquivo", 
         filetypes = (("Text files", "*.txt*"), 
         ("all files", "*.*"))) 
-       
+    shutil.copy(filename, destino)
     
     label_file_explorer.configure(text="Arquivo selecionado: "+filename) 
 
+    
+    
 
-def copy():
-    global data
-
-
-
-#configuração dos buttom
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-       
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------       
 button_explore = Button(window, text = "Selecionar Banco", command = browseFiles)  
    
 button_exit = Button(window, text = "Sair", command = exit)  
-   
+
 button_explore.grid(column = 2, row = 2) 
    
 button_exit.grid(column = 2,row = 3) 
+
 
 
 window.mainloop() 
