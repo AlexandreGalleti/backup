@@ -22,7 +22,8 @@ global data
 def browseFiles(): 
     filename = filedialog.askopenfilename(initialdir = "/",    
         title = "Selecione um arquivo", 
-        filetypes = (("all files"))) 
+        filetypes = (("Text files", "*.txt*"), 
+        ("all files", "*.*"))) 
        
     
     label_file_explorer.configure(text="Arquivo selecionado: "+filename) 
@@ -46,3 +47,7 @@ button_exit.grid(column = 2,row = 3)
 
 
 window.mainloop() 
+
+
+
+
