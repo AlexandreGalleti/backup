@@ -10,7 +10,7 @@ import time
 
 
 my_w = tk.Tk()
-my_w.geometry("350x350")
+my_w.geometry("400x350")
 my_w.title("atalho de suporte")
 global data
 
